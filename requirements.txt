@@ -27,8 +27,8 @@ folium==0.13.0
 streamlit_folium==0.6.15
 Flask
 gunicorn==19.9.0
-itsdangerous==1.1.0
-Jinja2==2.10.1
-MarkupSafe==1.1.1
-Werkzeug==0.15.5
-flasgger==0.9.4
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+flasgger
