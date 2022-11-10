@@ -31,9 +31,6 @@ from tqdm import tqdm
 from sklearn.model_selection import LeaveOneOut
 from sklearn.metrics import plot_confusion_matrix
 from sklearn.model_selection import cross_val_score
-from numpy import mean
-from numpy import absolute
-from numpy import sqrt
 #for visualization
 import cufflinks as cf
 cf.go_offline()
@@ -49,8 +46,6 @@ init_notebook_mode(connected=True)
 import plotly.express as px
 import plotly.graph_objects as go
 import pickle
-from joblib import dump, load
-import joblib
 # Utils
 import time
 timestr = time.strftime("%Y%m%d-%H%M%S")
@@ -58,7 +53,6 @@ import sys
 from sklearn.metrics import r2_score,accuracy_score,mean_absolute_error,mean_squared_error,mean_absolute_percentage_error 
 from sklearn.ensemble import ExtraTreesRegressor,RandomForestRegressor,AdaBoostRegressor,GradientBoostingRegressor
 from sklearn.tree import DecisionTreeRegressor
-from xgboost import XGBRegressor
 from plotly import tools
 from sklearn.model_selection import train_test_split,cross_val_score,GridSearchCV,KFold
 from sklearn.preprocessing import StandardScaler,LabelEncoder
@@ -74,226 +68,34 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 sns.set_palette("hls")
 plt.style.use('fivethirtyeight')
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import LabelEncoder
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.metrics import mean_squared_error
-from scipy.stats.mstats import winsorize
-from scipy.stats import boxcox, probplot, norm
-from scipy.special import inv_boxcox
-import random
-import datetime
-import math
-sns.set_palette("hls")
-plt.style.use('fivethirtyeight')
-from sklearn import preprocessing
-from sklearn.metrics import confusion_matrix, roc_auc_score
-from sklearn.model_selection import StratifiedKFold, cross_val_score, KFold
-from xgboost import XGBClassifier
-import xgboost as xgb
-from sklearn.metrics import silhouette_score
-## Hyperopt modules
-#from hyperopt import fmin, hp, tpe, Trials, space_eval, STATUS_OK, STATUS_RUNNING
-#from functools import partial
-from sklearn.metrics import roc_auc_score
-import matplotlib.gridspec as gridspec
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
 from plotly.subplots import make_subplots
 sns.set_palette("hls")
 plt.style.use('fivethirtyeight')
-import warnings
-warnings.filterwarnings("ignore")
-import numpy as np
-import scipy
 from matplotlib import pyplot as plt
 import seaborn as sns
 from sklearn.cluster import KMeans
 import scipy.cluster.hierarchy as sch
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.cluster import DBSCAN
-from sklearn.preprocessing import StandardScaler
-from sklearn.manifold import TSNE
-from sklearn.decomposition import PCA
-from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import KMeans
-from sklearn.mixture import GaussianMixture
-from sklearn.ensemble import IsolationForest
-from sklearn.metrics import silhouette_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from yellowbrick.cluster import KElbowVisualizer
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt, numpy as np
-from sklearn.cluster import AgglomerativeClustering
-from matplotlib.colors import ListedColormap
-from sklearn import metrics
-#preprocessing libraries
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
 
-#ML libraries
-import tensorflow as tf
-from sklearn.svm import SVC
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from yellowbrick.cluster import KElbowVisualizer
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt, numpy as np
-from sklearn.cluster import AgglomerativeClustering
-from matplotlib.colors import ListedColormap
-from sklearn import metrics
-from yellowbrick.classifier import PrecisionRecallCurve
-#preprocessing libraries
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
 
-#ML libraries
-import tensorflow as tf
-from sklearn.svm import SVC
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from xgboost import plot_importance, to_graphviz
-from xgboost import plot_tree
+
+#preprocessing libraries
 #For Model Acuracy
-from sklearn import metrics
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from sklearn.metrics import accuracy_score
-from xgboost import plot_importance, to_graphviz #
-from sklearn.metrics import classification_report
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix,roc_auc_score,accuracy_score,classification_report
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.naive_bayes import GaussianNB
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
-from pandas.plotting import scatter_matrix
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-import xgboost as xgb
-import lightgbm as lgb
-from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
-from sklearn.metrics import roc_curve,roc_auc_score
-from sklearn.metrics import log_loss
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve
-from sklearn.metrics import precision_score, recall_score
-from sklearn.decomposition import PCA
-from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import KMeans
-from sklearn.mixture import GaussianMixture
-from sklearn.ensemble import IsolationForest
+
 import plotly.graph_objs as go
 import plotly.tools as tls
 import cufflinks as cf
 import plotly.figure_factory as ff
 from plotly.offline import iplot, init_notebook_mode
 init_notebook_mode(connected=True)
-from sklearn import preprocessing
-from sklearn.metrics import confusion_matrix, roc_auc_score
-from sklearn.model_selection import StratifiedKFold, cross_val_score, KFold
-from xgboost import XGBClassifier
-import xgboost as xgb
-from sklearn.metrics import silhouette_score
-from sklearn.metrics import roc_auc_score
-import matplotlib.gridspec as gridspec
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
 from plotly.subplots import make_subplots
-from sklearn.cluster import KMeans
-import scipy.cluster.hierarchy as sch
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.cluster import DBSCAN
-from sklearn.preprocessing import StandardScaler
-from sklearn.manifold import TSNE
-from sklearn.decomposition import PCA
-from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import KMeans
-from sklearn.mixture import GaussianMixture
-from sklearn.ensemble import IsolationForest
-from sklearn.metrics import silhouette_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from yellowbrick.cluster import KElbowVisualizer
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt, numpy as np
-from mpl_toolkits.mplot3d import Axes3D
-from sklearn.cluster import AgglomerativeClustering
-#preprocessing libraries
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-#ML libraries
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from xgboost import plot_importance, to_graphviz
-from xgboost import plot_tree
-#For Model Acuracy
-from sklearn import metrics
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from sklearn.metrics import accuracy_score
-from xgboost import plot_importance, to_graphviz #
-from sklearn.metrics import classification_report
-from yellowbrick.classifier import PrecisionRecallCurve
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix,roc_auc_score,accuracy_score,classification_report
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.naive_bayes import GaussianNB
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
-from pandas.plotting import scatter_matrix
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-import xgboost as xgb
-import lightgbm as lgb
-from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
-from sklearn.metrics import roc_curve,roc_auc_score
-from sklearn.metrics import log_loss
+
+
 # EDA Pkgs
 import pandas as pd 
 import codecs
@@ -312,33 +114,19 @@ from sklearn.model_selection import ShuffleSplit
 #lottie animations
 import time
 import requests
-import json
 import streamlit as st
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 #nltk libreries
 import io
 import requests
-import json
-from sklearn.preprocessing import MinMaxScaler
 from PIL import Image
-from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import sigmoid_kernel
-from scipy.sparse import csr_matrix
-from sklearn.neighbors import NearestNeighbors
-from sklearn.metrics.pairwise import cosine_similarity
 #from surprise import SVD,Reader,Dataset
 import matplotlib.patches as mpatches
 import plotly.tools as tls
-from mpl_toolkits.basemap import Basemap
-import folium
-import folium.plugins
 from matplotlib import animation,rc
 from IPython.display import HTML, display
 
-from streamlit_folium import folium_static
-import folium
 
 ###############################################Data Processing###########################
 data=pd.read_csv('./matches.csv')
